@@ -2,34 +2,34 @@
 
 Complete this one group record. Link actual issues, diffs, tests and reviews; avoid copying entire histories. Blank fields are intentional. Duplicate rows as needed. Use synthetic data only. Every member records their own meaningful contribution. Do not invent results, reviews or Copilot use.
 
-- Group/tutorial: [response]
-- Members, GitHub usernames and cohorts: [response]
-- Repository URL: [response]
+- Group/tutorial: Fri 8:30 - 10:30 Group 3
+- Members, GitHub usernames and cohorts: Tobyn(TobynJames) ,Hayden(HaydenOz) ,Hanyia(ArduinoO121)
+- Repository URL: https://github.com/Hayden0z/st1-assignment-3
 - Starting SHA: [response]
 
 ## A Requirement to issue activities
 
 ### FR-02 Patient Search
 
-- Title: [response]
-- Context: [response]
-- Requirement: [response]
-- Acceptance criteria: [response]
-- Scope: [response]
-- Definition of Done: [response]
-- Owner: [response]
-- Actual issue link: [response]
+- Title: Patient search 
+- Context: the Patient search function finds a specific instince or object of the patient class 
+- Requirement: able to search up a requried patient with thier assicotied information 
+- Acceptance criteria: Patient search is able to find the correct patient with the assicotied information given 
+- Scope: Big as patients are a cruciel part of the smartcare busssiness,messing up the search function can have cruciel consquences for example having the wrong patient in a appioment.or using wrong information for a specific patient.  
+- Definition of Done: paitent search can correctly pull up the patient with the correct information 
+- Owner: data_store.py
+- Actual issue link: class search patient is not being imported 
 
 ### FR-06 Appointment Cancellation with FR-07 retained history
 
-- Title: [response]
-- Context: [response]
-- Requirement: [response]
-- Acceptance criteria: [response]
-- Scope: [response]
-- Definition of Done: [response]
-- Owner: [response]
-- Actual issue link: [response]
+- Title: Appoiment cancellation
+- Context: Updating the appioment status to cancelled while retaining the appioment 
+- Requirement: appioments must have statues that are able to be upcoming,completed or cancelled
+- Acceptance criteria: appioments can be cancelled but still retain information 
+- Scope: involes prcationers and patients 
+- Definition of Done: appioments stautes can be changes to cancelled 
+- Owner: AppointmentStatus is in domain.py while cancel_appointment is in services.py  
+- Actual issue link: datastore not connecting proprly 
 
 ## B Commit quality
 
