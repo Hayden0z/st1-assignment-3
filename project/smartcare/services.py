@@ -29,13 +29,15 @@ class PatientService:
         return patient
 
     def find_patient(self, patient_id: str) -> Patient:
-        """Stage 6 TODO: return the stored patient for a valid patient ID.
-
-        Completion must raise LookupError for absence and ValueError for
-        a blank/invalid ID. It must not create a replacement patient.
-        The starter deliberately raises NotImplementedError.
-        """
-        raise NotImplementedError('Stage 6: patient lookup')
+            """Return the stored Patient; raise LookupError when absent.
+            
+            Reject a blank or invalid ID with ValueError; do not create
+            records.
+            """
+            patient = self.data_store.find_patient(patient_id)
+            if patient is None:
+                raise LookupError('Patient not found')
+            return patient
 
 
 class PractitionerService:
@@ -64,14 +66,15 @@ class PractitionerService:
         return practitioner
 
     def find_practitioner(self, practitioner_id: str) -> Practitioner:
-        """Stage 6 TODO: return the stored practitioner for a valid ID.
-
-        Completion must raise LookupError for absence and ValueError for
-        a blank/invalid ID. It must not create a replacement
-        practitioner. The starter deliberately raises
-        NotImplementedError.
+        """Return the stored practitioner; raise LookupError when absent.
+        
+        Reject a blank or invalid ID with ValueError; do not create
+        records.
         """
-        raise NotImplementedError('Stage 6: practitioner lookup')
+        practitioner = self.data_store.find_practitioner(practitioner_id)
+        if practitioner is None:
+            raise LookupError('Practitioner not found')
+        return practitioner
 
 
 class AppointmentService:
@@ -139,7 +142,11 @@ class AppointmentService:
         Return the cancelled object. Unknown IDs raise LookupError;
         invalid transitions raise ValueError and leave state unchanged.
         """
-        raise NotImplementedError('Stage 6: appointment cancellation')
+        appointment = self.data_store.find_appointment(appointment_id)
+        if appointment is None:
+            raise LookupError('Appointment not found')
+        else: 
+            appointment.status == 'cancelled'
 
     def list_practitioner_appointments(
         self,

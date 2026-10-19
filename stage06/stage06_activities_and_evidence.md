@@ -35,11 +35,11 @@ Complete this one group record. Link actual issues, diffs, tests and reviews; av
 
 | Original example | Strong or Weak | Reason |
 |---|---|---|
-| changes | [select] | [response] |
-| final version | [select] | [response] |
-| Add patient search by ID | [select] | [response] |
-| fix stuff | [select] | [response] |
-| Prevent cancellation of completed appointments | [select] | [response] |
+| changes | [Weak] | [Single word without description of said changes] |
+| final version | [Weak] | [indicates the version but doesn't discribe what has been added] |
+| Add patient search by ID | [Strong] | [directly names the new addition] |
+| fix stuff | [Weak] | [fix what? dosn't discribe new fixes] |
+| Prevent cancellation of completed appointments | [Strong] | [directly states a new feature] |
 
 ## C Over scoped PR review
 
