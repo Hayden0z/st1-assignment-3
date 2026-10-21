@@ -45,33 +45,33 @@ Complete this one group record. Link actual issues, diffs, tests and reviews; av
 
 A cancellation PR also renames unrelated patient fields, restructures unrelated code and adds a new dependency.
 
-- Scope concerns: [response]
-- Responsibility and architecture concerns: [response]
-- Testing and review concerns: [response]
-- Changes to remove or separate, with reasons: [response]
+- Scope concerns: Affects other code and add another dependancy 
+- Responsibility and architecture concerns: Increases complexity of software, and add's dependancy deprecation risk if external 
+- Testing and review concerns: Can't be tested in an isolated enviroment if it edits unrelated code
+- Changes to remove or separate, with reasons: Recomendation to change the new code to run indipendently 
 
 ## D Challenge a weak Copilot review
 
 GitHub Copilot says: "Looks good; tests pass."
 
-- Missing evidence: [response]
-- Follow-up review question 1: [response]
-- Follow-up review question 2: [response]
-- Follow-up review question 3: [response]
-- Follow-up review question 4: [response]
-- Follow-up review question 5: [response]
-- Additional questions if useful: [response]
+- Missing evidence: No information on such tests and how many, no conformation of what looks good
+- Follow-up review question 1: clarify What looks good
+- Follow-up review question 2: Please list out all tests past
+- Follow-up review question 3: Please list if it failed any hidden tests
+- Follow-up review question 4: Please increase scope of testing
+- Follow-up review question 5: Please reveiw it in the context of the rest of the aplication
+- Additional questions if useful: [NA]
 
 ## E Team workflow agreement
 
 | Practice | Team agreement |
 |---|---|
-| Branch naming | [response] |
-| Commit message convention | [response] |
-| PR size | [response] |
-| Another-member review requirement | [response] |
-| Merge rule | [response] |
-| Significant Copilot disclosure rule | [response] |
+| Branch naming | Single main branch |
+| Commit message convention | Rough Time and day + Stage worked on (Any new feature must be named) |
+| PR size | Work on one stage at a time limmiting Pull Size |
+| Another-member review requirement | No review requirement |
+| Merge rule | NA |
+| Significant Copilot disclosure rule | NA |
 
 ## F Issue and backlog index
 
@@ -131,7 +131,25 @@ Record meaningful required use, not every trivial completion. Repeat per signifi
 
 Repeat per member. Include only categories that describe actual work; write not applicable where appropriate. Pairing or mentoring can be supported by a short corroborated note.
 
-- Member: [response]
+- Member: [Tobyn]
+- Implementation: [work and evidence]
+- Testing: [work and evidence]
+- Review: [work and evidence]
+- Issue refinement: [work and evidence]
+- Design and responsibility discussion: [work and evidence]
+- Debugging or integration: [work and evidence]
+- Documentation or team support: [work and evidence]
+
+- Member: [Hanyia]
+- Implementation: [work and evidence]
+- Testing: [work and evidence]
+- Review: [work and evidence]
+- Issue refinement: [work and evidence]
+- Design and responsibility discussion: [work and evidence]
+- Debugging or integration: [work and evidence]
+- Documentation or team support: [work and evidence]
+
+- Member: [Hayden]
 - Implementation: [work and evidence]
 - Testing: [work and evidence]
 - Review: [work and evidence]
@@ -144,45 +162,45 @@ Repeat per member. Include only categories that describe actual work; write not 
 
 Why is a high commit count not necessarily evidence of strong contribution?
 
-[response]
+You can commit many small changes that don't add up to anything significant 
 
 ## L Stage 6 formative questions
 
 1. What is version control?
 
-[response]
+GIT's version control is it having multible branches people can work on at the same time
 
 2. Why is a feature branch useful?
 
-[response]
+It creates an inviroment where things might not be fully functional but new features can be tested and worked on
 
 3. What makes a commit a good engineering commit?
 
-[response]
+Add's functionality to the project and has good message attached
 
 4. What is a pull request?
 
-[response]
+A dev requesting to merge changes from one branch to another
 
 5. What is the purpose of code review?
 
-[response]
+Making sure the code works but is also approved by others
 
 6. What does a Git diff show?
 
-[response]
+The diffrence between commits
 
 7. What is a Definition of Done?
 
-[response]
+The state a pull request / branch must reach before it can be approved into the main branch
 
 8. What is the appropriate role of GitHub Copilot in pull-request review?
 
-[response]
+code testing
 
 9. Why should individual contribution not be judged only by commit count?
 
-[response]
+You can commit many small changes that don't add up to anything significant 
 
 10. What is the Stage 6 engineering rule?
 
