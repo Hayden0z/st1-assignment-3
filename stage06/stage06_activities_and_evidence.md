@@ -5,7 +5,7 @@ Complete this one group record. Link actual issues, diffs, tests and reviews; av
 - Group/tutorial: Fri 8:30 - 10:30 Group 3
 - Members, GitHub usernames and cohorts: Tobyn(TobynJames) ,Hayden(HaydenOz) ,Hanyia(ArduinoO121)
 - Repository URL: https://github.com/Hayden0z/st1-assignment-3
-- Starting SHA: [response]
+- Starting SHA: [c950052]
 
 ## A Requirement to issue activities
 
@@ -17,7 +17,7 @@ Complete this one group record. Link actual issues, diffs, tests and reviews; av
 - Acceptance criteria: Patient search is able to find the correct patient with the assicotied information given 
 - Scope: Big as patients are a cruciel part of the smartcare busssiness,messing up the search function can have cruciel consquences for example having the wrong patient in a appioment.or using wrong information for a specific patient.  
 - Definition of Done: paitent search can correctly pull up the patient with the correct information 
-- Owner: data_store.py
+- Owner: Tobyn
 - Actual issue link: class search patient is not being imported 
 
 ### FR-06 Appointment Cancellation with FR-07 retained history
@@ -28,7 +28,7 @@ Complete this one group record. Link actual issues, diffs, tests and reviews; av
 - Acceptance criteria: appioments can be cancelled but still retain information 
 - Scope: involes prcationers and patients 
 - Definition of Done: appioments stautes can be changes to cancelled 
-- Owner: AppointmentStatus is in domain.py while cancel_appointment is in services.py  
+- Owner: Tobyn
 - Actual issue link: datastore not connecting proprly 
 
 ## B Commit quality
@@ -79,84 +79,85 @@ Create at least two focused issues. Add a linked practitioner-lookup issue or an
 
 | Issue link | Requirement | Owner | Acceptance criteria or precise link | Status |
 |---|---|---|---|---|
-| [issue 1] | [response] | [response] | [response] | [response] |
-| [issue 2] | [response] | [response] | [response] | [response] |
+| [Patient Search was not implemented] | [To look up a patient with ID] | [Tobyn] | [Patient search looks up patient with ID, returns lookup error if no ID is matched] | [Implemented] |
+| [Appointment Cancellation was not implemented] | [To be able to find an appointment by ID and update its status to "Canceled"] | [Tobyn] | [Appointment cancellation looks up an appointment by ID and returns a lookup error if not found; if found, it updates the appointment's status to cancelled] | [Implemented] |
 
 ## G Pull request evidence
 
 Repeat this block per PR. Record actual events, not planned approvals.
 
-- PR link and title: [response]
-- Linked issue and requirement: [response]
-- Feature branch: [response]
-- Changed behaviour: [response]
-- Meaningful commits: [links]
-- Test command, directory and observed result: [response]
-- Another-member reviewer: [response]
-- Human observations recorded before Copilot: [link and time]
-- Requirement, responsibilities, test assertions and unrelated-scope checks: [response]
-- Key feedback: [response]
-- Author response/change and verification: [response]
-- Reviewer recheck and approval: [link]
-- Merge outcome and SHA: [response]
-- Significant Copilot assistance: [summary or none]
-- Linked issue closure: [response]
-- Each member updated main: [member and confirmation]
-- Integrated verification after merge: [command, directory, result and code SHA]
+- PR link and title: [No standard pull requests, instead we as a group notify eachother of when we're working on main]
+- Linked issue and requirement: [Lastest push was Markdown work updated, requirement was to finish stage 6 markdown file]
+- Feature branch: [main is the only branch]
+- Changed behaviour: [code untouched]
+- Meaningful commits: [1f3c623 - This was the only code change commit]
+- Test command, directory and observed result: [No test ran in stage 6]
+- Another-member reviewer: [Not required]
+- Human observations recorded before Copilot: [copilot not used]
+- Requirement, responsibilities, test assertions and unrelated-scope checks: [Tests to be ran in stage 7]
+- Key feedback: [No feedback]
+- Author response/change and verification: [No pull requests, but we are running a group chat for change and verifitcation statments]
+- Reviewer recheck and approval: [Self approval before pushing changes, but notofiying groupchat before editing main]
+- Merge outcome and SHA: [NA]
+- Significant Copilot assistance: [None]
+- Linked issue closure: [#1 & #2]
+- Each member updated main: [Tobyn, Hanyia & Hayden]
+- Integrated verification after merge: [Na There was no merge]
 
 ## H Copilot collaboration record
 
 Record meaningful required use, not every trivial completion. Repeat per significant interaction.
 
-- Member and task: [response]
-- Prompt/purpose and relevant issue/diff: [response]
-- Summary of output: [response]
-- Human check against actual code, requirements and tests: [response]
-- Decision — Accept / Modify / Reject: [select]
-- Reason: [response]
+- NOT USED IN STAGE 6
+- Member and task: [NOT USED IN STAGE 6]
+- Prompt/purpose and relevant issue/diff: [NOT USED IN STAGE 6]
+- Summary of output: [NOT USED IN STAGE 6]
+- Human check against actual code, requirements and tests: [NOT USED IN STAGE 6]
+- Decision — Accept / Modify / Reject: [NOT USED IN STAGE 6]
+- Reason: [NOT USED IN STAGE 6]
 - Verification/evidence: [link and result]
 
 ## I Human versus Copilot review comparison
 
-- Human reviewer noticed before consulting Copilot: [response]
-- Copilot noticed: [response]
-- Overlap: [response]
-- What did the human reviewer notice that Copilot did not: [response]
-- What did Copilot identify that the human reviewer initially missed: [response]
+- Human reviewer noticed before consulting Copilot: [NOT USED IN STAGE 6]
+- Copilot noticed: [NOT USED IN STAGE 6]
+- Overlap: [NOT USED IN STAGE 6]
+- What did the human reviewer notice that Copilot did not: [NOT USED IN STAGE 6]
+- What did Copilot identify that the human reviewer initially missed: [NOT USED IN STAGE 6]
 - Unsupported or incorrect Copilot suggestion: [response or none identified with explanation]
-- Human judgement accepted, modified or rejected, and why: [response]
-- Which evidence justified merge approval: [response]
+- Human judgement accepted, modified or rejected, and why: [NOT USED IN STAGE 6]
+- Which evidence justified merge approval: [NOT USED IN STAGE 6]
 
 ## J Contributions
 
 Repeat per member. Include only categories that describe actual work; write not applicable where appropriate. Pairing or mentoring can be supported by a short corroborated note.
 
 - Member: [Tobyn]
-- Implementation: [work and evidence]
-- Testing: [work and evidence]
-- Review: [work and evidence]
-- Issue refinement: [work and evidence]
-- Design and responsibility discussion: [work and evidence]
-- Debugging or integration: [work and evidence]
-- Documentation or team support: [work and evidence]
+- Implementation: [Markdown work and Code implementation 1f3c623]
+- Testing: [no testing ran in stage 6]
+- Review: [Happy with the stage 6 state]
+- Issue refinement: [Identified missing code in 3 classes and used existing classes to fill in missing code]
+- Design and responsibility discussion: [Organiziing group and group workflow]
+- Debugging or integration: [no testing or debugging in stage 6 ]
+- Documentation or team support: [Documentation written here with all 3 team memeber]
 
 - Member: [Hanyia]
-- Implementation: [work and evidence]
-- Testing: [work and evidence]
-- Review: [work and evidence]
-- Issue refinement: [work and evidence]
-- Design and responsibility discussion: [work and evidence]
-- Debugging or integration: [work and evidence]
-- Documentation or team support: [work and evidence]
+- Implementation: [Was not done for this section.]
+- Testing: [Was not done for this section.]
+- Review: [Helped in reviewing work after finished.]
+- Issue refinement: [Was not done for this section.]
+- Design and responsibility discussion: [Was not done for this section.]
+- Debugging or integration: [Was not done for this section.]
+- Documentation or team support: [Supported development of documentation.]
 
 - Member: [Hayden]
-- Implementation: [work and evidence]
-- Testing: [work and evidence]
+- Implementation: [not for this section]
+- Testing: [open and ran some files to see what the issue is for the requriments ]
 - Review: [work and evidence]
-- Issue refinement: [work and evidence]
-- Design and responsibility discussion: [work and evidence]
-- Debugging or integration: [work and evidence]
-- Documentation or team support: [work and evidence]
+- Issue refinement: [not for this section]
+- Design and responsibility discussion: [what are the issues for the functional requriments ]
+- Debugging or integration: [not for this section]
+- Documentation or team support: [wrote up the begging bit of stage 6 being a requriments to issue section]
 
 ## K Exit question
 
@@ -204,19 +205,19 @@ You can commit many small changes that don't add up to anything significant
 
 10. What is the Stage 6 engineering rule?
 
-[response]
+[Identify issues > documented issues > implement code > test > push to main branch > uppdated documentation]
 
 ## M Completion and handover
 
-- Starting SHA: [response]
-- Final Stage 6 code SHA: [response]
-- Test command: [response]
-- Working directory: [response]
-- Observed result: [response]
-- PR and another-member reviewer: [links]
-- Unresolved issue or none: [response]
-- Stage 7 handover status: [ready for tutor checkpoint / unresolved work]
-- Final submitted SHA if later than tested SHA: [response and evidence-only difference]
+- Starting SHA: [c950052]
+- Final Stage 6 code SHA: [1f3c623]
+- Test command: [Tests to be run in stage 6]
+- Working directory: [st1-assessment-3]
+- Observed result: [Stage 6 complete!]
+- PR and another-member reviewer: [No Push Requests]
+- Unresolved issue or none: [None]
+- Stage 7 handover status: [ready for tutor checkpoint]
+- Final submitted SHA if later than tested SHA: [1f3c623]
 
 - [ ] Three Stage 6 service targets completed and checked.
 - [ ] Original supplied tests retained and passing.
