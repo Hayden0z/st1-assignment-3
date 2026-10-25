@@ -73,7 +73,7 @@ Assign TEST IDs before implementation or generation. Use canonical AC IDs with t
 
 | Requirement | Acceptance criterion | Test ID | Test type | Test name / location | Expected behaviour | Result / observed status | Supplied or student-authored |
 |---|---|---|---|---|---|---|---|
-| [complete] | [complete] | [complete] | [complete] | [complete] | [complete] | [complete] | [complete] |
+| Book appointment | Appointment can be booked with name, patient and practitioners & time | A1 | test_starter.py file | test_unregistered_participants_rejected function in the Test_starter.py file | stores appointment without error | Sucsess | Supplied |
 
 ## C Test Design
 
@@ -81,7 +81,8 @@ Use descriptive test names such as test_cancel_changes_status() or test_blank_pa
 
 | Test ID | Requirement | Acceptance criterion | Positive / Negative / Boundary | Test intention | Observable result expected | Added evidence beyond supplied tests |
 |---|---|---|---|---|---|---|
-| [complete] | [complete] | [complete] | [complete] | [complete] | [complete] | [complete] |
+| A1 | Book appointment | Appointment can be booked with name, patient and practitioners & time | Positive | See outcome if correct values in an appointment | Correct values are booked | Matches scope and system design |
+
 
 ## D Arrange Act Assert Record
 
