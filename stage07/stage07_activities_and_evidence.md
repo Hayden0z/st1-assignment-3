@@ -14,34 +14,38 @@ For each requirement, propose one positive test, one negative test and the key a
 
 | Requirement | Positive test | Negative test | Key assertion |
 |---|---|---|---|
-| FR-01 Register patient | [response] | [response] | [response] |
-| FR-05 Prevent practitioner conflict | [response] | [response] | [response] |
-| FR-06 Cancel appointment | [response] | [response] | [response] |
-| FR-07 Retain cancelled history | [response] | [response] | [response] |
+| FR-01 Register patient | the patient information is correctly inputted with correct data and format that can be registered | patient name has integers/numbers all patient information have incorrect input data,which will not let the information of the patient pass into the system  | The patient is successfully added when the patient’s information is valid  |
+
+| FR-05 Prevent practitioner conflict | Booking a free appointment for the practitioner at any time slot   
+ | Booking two appointments for the practitioner at the same time | System prevents they to be double booking for any practitioner so no overlap is caused |
+
+| FR-06 Cancel appointment | being able to cancel the appointment based on its ID and also changing your condition | attempting to cancel an appointment that does not exist | Only valid appointments are able to be canceled by changing their status to canceled |
+
+| FR-07 Retain cancelled history | Cancel a appointment an check that is able to be viewed in records | Delete or search for a canceled appointment that does not exist | canceled appointments remain stored as an appointments status changes so all appointments remain stored and can be viewed in a record |
 
 ### Activity 2 Strong or weak assertion
 
 For each, select Strong for stated behaviour or Weak/unclear and explain why. State the behaviour and limits.
 
 `assert True`
-Judgement: [Strong for stated behaviour / Weak/unclear]  Why: [response]
+Judgement: [ Weak/unclear]  Why: Because assert True always passes and nothing is tested for the behaviour of the program.it provides no evidence that that assert true works
 
 `assert appointment is not None`
-Judgement: [Strong for stated behaviour / Weak/unclear]  Why: [response]
+Judgement: [ Weak/unclear]  Why: Only checks if an appointment object exists.This does not check if an appointment object has correct information example time is 11:30pm 
 
 `assert appointment.status == AppointmentStatus.CANCELLED`
-Judgement: [Strong for stated behaviour / Weak/unclear]  Why: [response]
+Judgement: [Strong for stated behaviour ]  Why: assert appointment.status == AppointmentStatus.CANCELLED directly checks if an appointment object status has changed to Canceled,This is the expected function of the appointment cancellation feature.However a limit would be that it can not verify that an appointment is stored in history 
 
 `assert len(results) > 0`
-Judgement: [Strong for stated behaviour / Weak/unclear]  Why: [response]
+Judgement: [ Weak/unclear]  Why: Only confirms that some results have been returned,this does not check if it has found the correct patient or appointment.
 
 `assert data_store.find_appointment('A1') is appointment`
-Judgement: [Strong for stated behaviour / Weak/unclear]  Why: [response]
+Judgement: [Strong for stated behaviour]  Why: This verifies the searching of the appointment A1,returns the correct and expected appointment record.This puts the finding functionality to the test.A limit would be that it doesn't check the appointments status
 
 ### Activity 3 Boundary thinking
 
 Design boundary or edge cases for blank identifiers, whitespace-only names, same-time practitioner bookings, cancelled appointments and invalid status transitions.
-For each input/state, expected result and supporting contract: [response]
+For each input/state, expected result and supporting contract: done this might import images as it is a table
 
 ### Activity 4 Critique GitHub Copilot tests
 
@@ -49,16 +53,19 @@ GitHub Copilot generates five tests, all of which pass. Two only assert that obj
 
 | Candidate | What is wrong | Rewritten test intention |
 |---|---|---|
-| 1 | [response] | [response] |
-| 2 | [response] | [response] |
-| 3 | [response] | [response] |
-| 4 | [response] | [response] |
-| 5 | [response] | [response] |
+| 1)assert object is not none |Only checks that the object exists does not check if the data is correct |Checks that the objects data is correct when searched for example a patient when searched by their ID  |
+
+| 2)assert object is not none | another example can be it checks a appointment exists however does not check the status or details | [same thing as the first and the same example but change patient with appointment  |
+
+| 3)assert True  | Always passes True checks nothing | test that canceling an appointment changes the status to canceled  canceled |
+| 4)assume SMS notifications | Just Thinks that SMS notifications exists however are nowhere in the project just assumes |Should test an actual function in the project like a canceled appointment can be seen |
+| 5)assume SMS notifications | Same thing justs tests functionalities that don’t exist | test what happens when you cancel a non existent appointment  |
+
 
 ### Tutorial exit question
 
 Why can 100% code coverage coexist with poor software verification?
-[response]
+A program that has 100% code coverage can coexist with poor software verification.This is because when every line is executed and run the results can not be correct and the software will not check.Because code coverage is all about measuring how much code is executed.while software verification measures whether the software behaves correctly based on requirements on the software. So having 100 percent code coverage can coexist with poor software verification because a system can run and execute all the lines code well but the results outputted may not be correct 
 
 ## B Requirement to Test Traceability Matrix
 
