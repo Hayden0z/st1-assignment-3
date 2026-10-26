@@ -185,34 +185,34 @@ Record actual work in test design, implementation, review, traceability, diagnos
 ## N Formative Questions
 
 1. What question does verification answer?
-[response]
+[Verification answers are we making the software correctly for example Question1 as it does  the correct and negative testing for the functional requirements]
 
 2. What question does validation answer?
-[response]
+[Validation answers the question of are we making the correct software]
 
 3. What is a unit test?
-[response]
+[A unit test is a software test that runs and checks a single component of a software.Unit testing can be a great component because it unit testing can check isolated components and sees that there work and cause no issues.unit testing can detect early bugs and fix them,and unit testing can be used as great documentation as the units that are being tested are being looked  documented on what works and what causes issues]
 
 4. What is a pytest fixture?
-[response]
+[Pytest fixture is a reusable function that is designed to be reliable and sets a reliable consistent context for tests before a test runs.]
 
 5. What is parametrisation in pytest?
-[response]
+[Allows a function to be run multiple times with different input testing what the output would be.Instead of writing different test functions for every data variation]
 
 6. What is regression testing?
-[response]
+[Is adding new code but executing and checking that the new code fixes the required issues but doesn't cause new issues to occur.]
 
 7. What does code coverage tell us, and what does it not prove?
-[response]
+[Code coverage tells us that lines of code can be executed/can do inputs and more for example running calculations.what code coverage doesn't tell us is the output of the results as code coverage does not check the information and data of the code it just runs it.]
 
 8. What makes an assertion weak?
-[response]
+[An assertion is weak when it passes everything even if the codes output is incorrect or broken]
 
 9. What is the appropriate role of GitHub Copilot as a test assistant?
-[response]
+[The role of the GitHub Copilot as a test assistant appropriate roles for GitHub Copilot as a test assistant would be maintenance,fixing repetitive features.GitHub Copilot should not take the intent people do just help give small suggestions and help with doing very repetitive features]
 
 10. What is the Stage 7 engineering rule?
-[response]
+[Gathering evidence with testing,what their prove,gain results,as well with using Unit testing]
 
 ## O Stage Completion
 
