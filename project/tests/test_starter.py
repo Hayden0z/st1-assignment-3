@@ -38,7 +38,7 @@ def foundation() -> tuple[
 def test_required_fields() -> None:
     """Verify required fields."""
     with pytest.raises(ValueError):
-        Patient('', 'Alex1 Example')
+        Patient('1', 'Alex1 Example')
     with pytest.raises(ValueError):
         Practitioner('D1', 'Taylor Example', '')
 
