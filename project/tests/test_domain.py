@@ -4,34 +4,13 @@ from datetime import datetime
 
 import pytest
 
-from smartcare.data_store import SmartCareDataStore
 from smartcare.domain import (
     Appointment,
     AppointmentStatus,
     Patient,
     Practitioner,
 )
-from smartcare.services import (
-    AppointmentService,
-    PatientService,
-    PractitionerService,
-)
 
-def foundation() -> tuple[
-    SmartCareDataStore,
-    Patient,
-    Practitioner,
-    AppointmentService,
-]:
-    """Create fresh registered participants and services for a supplied
-    check.
-    """
-    data_store = SmartCareDataStore()
-    patient = PatientService(data_store).register_patient('P1', 'bob dylan')
-    practitioner = PractitionerService(
-        data_store,
-    ).register_practitioner('D1', 'Jared Smith', 'Proctologyst')
-    return (data_store, patient, practitioner, AppointmentService(data_store))
 
 
 def test_required_patientfields() -> None:
@@ -61,9 +40,9 @@ def test_required_practitionerfields() -> None:
     d1 = Practitioner('D1', 'Jared Smith', 'Proctologyst')
     assert d1.practitioner_id == 'D1' and d1.name == 'Jared Smith' and d1.specialty == 'Proctologyst'
     
-def invalid_appoint_constrction() -> None:
+def invalid_appoint_constrction(patient, practitioner) -> None:
     """Verify required fields."""
-    data_store, patient, practitioner, appointment_service = foundation()
+
     appointments = [
         ('', patient, practitioner, datetime(2026, 10, 1, 9)),
         ('A2', None, practitioner, datetime(2026, 10, 1, 9)),
@@ -75,3 +54,12 @@ def invalid_appoint_constrction() -> None:
             Appointment(appointment_id, patient_obj, practitioner_obj, date_time)
     test = Appointment('A1', patient, practitioner, datetime(2026, 10, 1, 9))
     assert test.appointment_id == 'A1' and test.patient == patient and test.practitioner == practitioner and test.date_time == datetime(2026, 10, 1, 9) and test.status == AppointmentStatus.SCHEDULED
+
+def test_guarded_cancleation_appointment(patient, practitioner) -> None:
+    """Verify required fields."""
+    appointment1 = Appointment('A1', patient, practitioner, datetime(2026, 10, 1, 9), AppointmentStatus.CANCELLED)
+    appointment2 = Appointment('A2', patient, practitioner, datetime(2026, 11, 1, 9), AppointmentStatus.COMPLETED)
+    with pytest.raises(ValueError):
+        appointment1.cancel()
+        appointment2.cancel()
+    assert appointment1.status == AppointmentStatus.CANCELLED and appointment2.status == AppointmentStatus.COMPLETED
