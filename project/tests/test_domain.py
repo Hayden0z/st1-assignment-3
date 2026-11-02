@@ -40,7 +40,7 @@ def test_required_practitionerfields() -> None:
     d1 = Practitioner('D1', 'Jared Smith', 'Proctologyst')
     assert d1.practitioner_id == 'D1' and d1.name == 'Jared Smith' and d1.specialty == 'Proctologyst'
     
-def invalid_appoint_constrction(patient, practitioner) -> None:
+def test_invalid_appoint_constrction(patient, practitioner) -> None:
     """Verify required fields."""
 
     appointments = [
