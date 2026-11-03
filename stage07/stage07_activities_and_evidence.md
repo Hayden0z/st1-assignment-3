@@ -73,7 +73,13 @@ Assign TEST IDs before implementation or generation. Use canonical AC IDs with t
 
 | Requirement | Acceptance criterion | Test ID | Test type | Test name / location | Expected behaviour | Result / observed status | Supplied or student-authored |
 |---|---|---|---|---|---|---|---|
-| Book appointment | Appointment can be booked with name, patient and practitioners & time | A1 | test_starter.py file | test_unregistered_participants_rejected function in the Test_starter.py file | stores appointment without error | Sucsess | Supplied |
+| Construct Appointment requires feilds | Appointment errors when one of the inputs is blank or null | APT_01 | input validation | invalid_appoint_constrction in test_domain.py | error raised | complete | student authored |
+
+| Patient Requires feilds | Construction errors when one of the inputs is blank or null | PAT_1 | input validation | test_required_patientfields in test_domain.py| Expected behaviour | error raised | complete | student authored |
+
+| Practitioner Requires feilds  | Construction errors when one of the inputs is blank or null  | PRA_1 | input validatione | test_required_practitionerfields in test_domain.py| error raised | complete | student authored |
+
+| Appointment can't be cancled if passed or already cancled | Acceptance criterion | APT_02| Logic | test_guarded_cancleation_appointment in test_domain.py | error raised | complete | student authored |
 
 ## C Test Design
 
@@ -81,7 +87,13 @@ Use descriptive test names such as test_cancel_changes_status() or test_blank_pa
 
 | Test ID | Requirement | Acceptance criterion | Positive / Negative / Boundary | Test intention | Observable result expected | Added evidence beyond supplied tests |
 |---|---|---|---|---|---|---|
-| A1 | Book appointment | Appointment can be booked with name, patient and practitioners & time | Positive | See outcome if correct values in an appointment | Correct values are booked | Matches scope and system design |
+| APT_01 | Book appointment | Appointment can be booked with name, patient and practitioners & time | Positive | See outcome if incorrect values in an appointment | incorrect values raise error | Matches scope and system design |
+
+| PAT_01| Patient can be created | ID and name required | Positive  | see outcomes if incorrect or null values are used in patient construction | incorrect values raise error | test created in test_domain.py |
+
+| PRA_01| Practioner can be created | ID, name & spectialty required | Positive  | see outcomes if incorrect or null values are used in practioner construction | incorrect values raise error | test created in test_domain.py |
+
+| APT_02| Update status of appoint | Updaing an appoint to cancled fails if appointment is already passed or cancled | Positive | See result when update to appointmet is added during particualr states | Appoint raises error when already cancled or passed | test created in test_domain.py |
 
 
 ## D Arrange Act Assert Record
@@ -90,7 +102,7 @@ Arrange test data; act on one meaningful behaviour; assert the required observab
 
 | Test ID | Arrange | Act | Assert | Why meaningful / why assertion proves criterion |
 |---|---|---|---|---|
-| [complete] | [complete] | [complete] | [complete] | [complete] |
+| APT_02 | create two appoints that are completed & cancled | attempt to cancle both appoointments | check if both attempts to cancle failed | sucsessfully errors out proving criteron |
 
 ## E Domain Test Evidence
 
@@ -98,7 +110,10 @@ Cover Patient/Practitioner construction and validation; Appointment construction
 
 | Test ID | Behaviour | Test file/function | Result |
 |---|---|---|---|
-| [complete] | [complete] | [complete] | [complete] |
+| PAT_01| errorrs on invalid inputs | test_invalid_appoint_constrction | checks inputs and errors in incorrect ones |
+| PRA_01 | errorrs on invalid inputs| test_required_patientfields | checks inputs and errors in incorrect ones |
+| APT_01 | errorrs on invalid inputs| test_required_practitionerfields | checks inputs and errors in incorrect ones |
+| APT_02 | errors in invalid asigment of varible | test_guarded_cancleation_appointment | dons't allow updaing of value to cancled if already cancled or passed |
 
 ## F Service Test Evidence
 
@@ -106,7 +121,7 @@ Use fresh shared SmartCareDataStore state, registered objects and completed Stag
 
 | Test ID | Behaviour | Requirement / criterion | Test file/function | Result |
 |---|---|---|---|---|
-| [complete] | [complete] | [complete] | [complete] | [complete] |
+| APT_02 | errors in invalid asigment of varible | test_guarded_cancleation_appointment | dons't allow updaing of value to cancled if already cancled or passed |
 
 ## G Negative and Boundary Cases
 
@@ -114,26 +129,29 @@ Connect cases to actual contracts and verify unchanged state after rejection.
 
 | Behaviour | Boundary/invalid input | Expected result | Test ID |
 |---|---|---|---|
-| [complete] | [complete] | [complete] | [complete] |
+| Tests invalid | Empty strings (""), None values, Invalid enums/status values, Dates in invalid formats| [complete] | PAT_01 - Invalid Appointment Construction |
+| Patient creation validates required fields | Missing/empty patient ID, first name, last name, or invalid required field formats (e.g., DOB, email, phone) | Error raised; patient is not created | PRA_01|
+| Practitioner creation validates required fields | Missing/empty practitioner ID, name, speciality, or invalid registration/licence details| Error raised; practitioner is not created | APT_01 |
+| Appointment cancellation is guarded by business rules | Appointment already cancelled, completed, or scheduled time is in the past | Error raised; appointment status remains unchanged. Only future booked appointments may be cancelled | APT_02 |
 
 ## H GitHub Copilot Test Design
 
 Select ONE real acceptance criterion. Complete human-first fields before using Copilot. Do not require an accepted generated test.
 
-Requirement: [complete]
-Acceptance criterion: [quote]
-Behaviour to test: [complete]
-Human-first test idea/categories: [complete]
-Prompt and purpose: [complete or link]
+Requirement: Practitoer creation requires valid inputs
+Acceptance criterion: errors appear when values are unwanted
+Behaviour to test: inputing blank strings, null values
+Human-first test idea/categories: inputing "" " " and None
+Prompt and purpose: to test
 
 For each significant candidate, copy this entry as needed:
-- Copilot test idea/candidate: [complete]
-- What it claims to verify: [complete]
-- Requirement trace: [complete]
-- Assertion quality: [complete]
-- Human critique: [complete]
-- Decision: [Accept / Modify / Reject]
-- Reason: [complete]
+- Copilot test idea/candidate: Practitioner creation validates required fields
+- What it claims to verify: Practitioner creation validates required fields
+- Requirement trace: It was asked to create this
+- Assertion quality: sub optimal
+- Human critique: add's extra out of scope options, "Invalid registratin / license detaisl"
+- Decision: reject
+- Reason: unneeded out of scope additions
 - Final test reference if accepted/modified: [link or not retained]
 - Actual verification result: [complete; do not claim an unrun test passed]
 
@@ -141,10 +159,10 @@ Before accepting: traces to a requirement/criterion; can fail for the right reas
 
 ## I Weak Copilot Test Reflection
 
-Which Copilot-generated test looked convincing but was weak? [response]
-Why was it weak? [response]
-How did you strengthen it? [response]
-Accepted / modified / rejected test decisions and evidence: [link actual decisions in H]
+Which Copilot-generated test looked convincing but was weak? Practitioner Creationg 
+Why was it weak? added extra out of scope checks
+How did you strengthen it? removed out of scope options
+Modified: 
 
 ## J Regression Run
 
@@ -152,7 +170,7 @@ Run python -m pytest from project/. Retain all accumulated tests. Record the tes
 
 | Command | Working directory | Code SHA | Passed | Failed | Failure summary | Product defect / test defect / unresolved | Evidence and interpretation |
 |---|---|---|---|---|---|---|---|
-| [complete] | [complete] | [complete] | [complete] | [complete] | [complete] | [complete] | [complete] |
+| python -m pytest tests/test_domain.py::test_guarded_cancleation_appointment| project | Code SHA | Passed | comand is evidence test sucseeds |
 
 Individual test runs and changed-order independence evidence: [commands, results, links]
 Optional tutor-led demonstration notes: [optional; leave blank if not used]
@@ -161,10 +179,10 @@ Requirement → test → failure/observation → diagnosis → change → verifi
 
 ## K What the Suite Still Does Not Prove
 
-What does your test suite still not prove? [response]
-Coverage if used: [result or not used]
-Which uncovered areas matter, and why does coverage percentage alone not establish correctness? [response]
-Optional fixtures/parametrisation used and why, if any: [response or not used]
+What does your test suite still not prove? if eveything works together
+Coverage if used: not used
+Which uncovered areas matter, and why does coverage percentage alone not establish correctness? untested, date time format validation
+Optional fixtures/parametrisation used and why, if any: not used
 
 ## L Git and Review Evidence
 
@@ -172,7 +190,7 @@ Use links rather than copying GitHub history. Continue the Stage 6 workflow; no 
 
 | Issue/task | Branch | PR | Reviewer | Key feedback | Outcome |
 |---|---|---|---|---|---|
-| [complete] | [complete] | [complete] | [complete] | [complete] | [complete] |
+| #2 | Main | NA| Hanyia | none | issue resolved |
 
 ## M Contribution Evidence
 
@@ -180,7 +198,12 @@ Record actual work in test design, implementation, review, traceability, diagnos
 
 | Member | Actual contribution | Evidence link |
 |---|---|---|
-| [complete] | [complete] | [complete] |
+| Tobyn | Creation of test code | Coding on Hanyias laptop  Commit 2230753
+|
+| Hanyia | Assistance with creating test code | Commit 2230753
+ |
+| Hayden | Formitive Questions | Commit c59300f
+ |
 
 ## N Formative Questions
 
@@ -216,9 +239,9 @@ Record actual work in test design, implementation, review, traceability, diagnos
 
 ## O Stage Completion
 
-Tested Stage 7 main SHA: [complete]
-Full-suite result: [complete]
-Unresolved defects and effect on baseline: [complete or none]
-Clean working tree and integration evidence: [complete]
+Tested Stage 7 main SHA: 22307530321b06aca7cbd6fbb456d4d95f2d35d3
+Full-suite result: complete
+Unresolved defects and effect on baseline: none
+Clean working tree and integration evidence: main, no branches
 Stage 8 handover status: [complete; no Stage 8 work assigned]
-All tutorial/formative responses and traceability/Copilot decisions complete: [confirm]
+All tutorial/formative responses and traceability/Copilot decisions complete: complete
