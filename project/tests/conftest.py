@@ -1,3 +1,4 @@
+from datetime import datetime
 import pytest
 
 from smartcare.data_store import SmartCareDataStore
@@ -27,3 +28,8 @@ def practitioner() -> Practitioner:
         data_store,
     ).register_practitioner('D1', 'Taylor Example', 'General')
 
+@pytest.fixture
+def appointment() -> Appointment:
+    """Create a registered appointment for use in tests."""
+    data_store = SmartCareDataStore()
+    return PatientService(data_store).register_appointment('A1', 'P1', 'D1', datetime(2026, 10, 1, 9), AppointmentStatus.SCHEDULED)
