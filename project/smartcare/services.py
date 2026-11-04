@@ -145,8 +145,8 @@ class AppointmentService:
         appointment = self.data_store.find_appointment(appointment_id)
         if appointment is None:
             raise LookupError('Appointment not found')
-        else: 
-            appointment.status == 'cancelled'
+        appointment.cancel()
+        return appointment
 
     def list_practitioner_appointments(
         self,
