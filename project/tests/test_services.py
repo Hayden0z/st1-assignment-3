@@ -74,11 +74,11 @@ def test_failed_booking_datastore_unchanged() -> None:
     assert appointment1.appointment_id == 'A1' and appointment1.patient == patient and appointment1.practitioner == practitioner and appointment1.date_time == datetime(2026, 10, 1, 9) and appointment1.status == AppointmentStatus.SCHEDULED
 
     #test canceled slot is free and patient conflict is not invented
-def test_slot_free_once_cancled(patient, practitioner) -> None:
-    "Using local feilds"
+def test_canceled_slot_free() -> None:
+    """Verify required fields."""
+    (data_store, patient_service, practitioner_service, appointment_service, patient, practitioner, appointment) = foundation()
+    appoinmtent1 = Appointment('A1', 'P1', 'D1', datetime(2026, 10, 1, 9))
+    appoinmtent1.cancel()
+    appoinment2 = Appointment('A1', 'P1', 'D1', datetime(2026, 10, 1, 9))
+    assert appoinment2.appointment_id == 'A1' and appoinment2.patient == patient and appoinment2.practitioner == practitioner and appoinment2.date_time == datetime(2026, 10, 1, 9) and appoinment2.status == AppointmentStatus.SCHEDULED
     
-    appointment1 = Appointment('A1', patient, practitioner, datetime(2026, 10, 1, 9))
-    appointment1.cancel()
-    appointment2 = Appointment('A1', patient, practitioner, datetime(2026, 10, 1, 9))
-
-    assert appointment2.appointment_id == 'A1' and appointment2.patient == patient and appointment2.practitioner == practitioner and appointment2.date_time == datetime(2026, 10, 1, 9) and appointment2.status == AppointmentStatus.SCHEDULED

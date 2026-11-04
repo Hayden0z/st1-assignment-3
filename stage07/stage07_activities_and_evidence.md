@@ -202,7 +202,7 @@ Record actual work in test design, implementation, review, traceability, diagnos
 |
 | Hanyia | Assistance with creating test code | Commit 2230753
  |
-| Hayden | Formitive Questions | Commit c59300f
+| Hayden | Formitive Questions and activity questions A to exit question | Commit c59300f
  |
 
 ## N Formative Questions
