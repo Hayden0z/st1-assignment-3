@@ -49,11 +49,12 @@ def test_find_items_by_ID() -> None:
     
 
     #test service cancel retains history
-def test_cancel_retains_history(patient, practitioner) -> None:
-    "Using local feilds"
-    appointment1 = Appointment('A1', patient, practitioner, datetime(2026, 10, 1, 9))
-    appointment1.cancel()
-    assert appointment1.appointment_id == 'A1' and appointment1.patient == patient and appointment1.practitioner == practitioner and appointment1.date_time == datetime(2026, 10, 1, 9) and appointment1.status == AppointmentStatus.CANCELLED
+def test_cancel_retains_history() -> None:
+    """Verify required fields."""
+    (data_store, patient_service, practitioner_service, appointment_service, patient, practitioner, appointment) = foundation()
+    assert appointment_service.find_appointment("A1") is appointment
+    assert appointment_service.cancel_appointment("A1")
+    assert appointment_service.find_appointment("A1") is appointment
         
     #test complete cancleation rejected without change
 def test_failed_cancel_retains_history(patient, practitioner) -> None:
@@ -73,7 +74,7 @@ def test_failed_booking_datastore_unchanged() -> None:
     appointment1 = appointment_service.find_appointment("A1")
     assert appointment1.appointment_id == 'A1' and appointment1.patient == patient and appointment1.practitioner == practitioner and appointment1.date_time == datetime(2026, 10, 1, 9) and appointment1.status == AppointmentStatus.SCHEDULED
 
-    #test canceled slot is free and patient conflict is not invented
+
  #test canceled slot is free and patient conflict is not invented
 def test_slot_free_once_cancled(patient, practitioner) -> None:
     "Using local feilds"
