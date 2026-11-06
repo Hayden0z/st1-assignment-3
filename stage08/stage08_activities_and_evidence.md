@@ -186,28 +186,49 @@ Root cause was line 110 and not the test's own logic
 
 ## D. F8-02 diagnosis and repair
 
-- Symptom / observed behaviour: [complete]
-- Expected behaviour and requirement: [complete]
-- Minimal synthetic reproduction steps: [complete]
-- Meaningful failing test path/name and exact relevant failure: [complete]
+- Symptom / observed behaviour: Cancelled appointments are not listed in the appointment history.
+- Expected behaviour and requirement: Cancelled appointments should be listed in appointment history.
+- Minimal synthetic reproduction steps: 
+· Book appointment
+· Cancel appointment
+· Check for cancelled appointment
+· Creates error
+- Meaningful failing test path/name and exact relevant failure: 
+Test function: test_cancel_retains_history()
+File path: st1-assignment-3/project/tests/test_services.py
 - Human hypothesis and intended checks: see E, F8-02.
-- Supported root cause and inspected code/runtime evidence: [complete after diagnosis]
-- Smallest justified fix / diff / why other behaviour is preserved: [complete]
+Two hypothesis
+1. Find appointment query does not search for cancelled appointments.
+2. Program deletes cancelled appointments.
+- Supported root cause and inspected code/runtime evidence: 
+Root cause is the following:
+
+Within Data_store.py at line 93 the find_appoinemnt function excludes canclled appointmsnets with the line
+and appointment.status.value != "cancelled"::\
+
+Inspected code/runtime evidence is that the statement, when commented out, reveals no errors and all debugging checks have passed.
+
+- Smallest justified fix / diff / why other behaviour is preserved: The root cause statement is deleted to ensure smooth running of the program.
+
 - Repair SHA / focused verification result: [complete]
 
 ## E. Human-first hypotheses
 
 Complete both entries BEFORE Copilot. C/D supply observed/expected/reproduction/test; retain those initial facts and link them here.
 
+observed: Cancled appointments don't apear in search query 
+expected: All appoinments are retianed regardless of status
+reproduction: Book appointment, cancle, then search for it's ID
+
 ### F8-01 human entry
-Likely cause and why plausible: [complete]
-Evidence intended to inspect / competing explanation / discriminating check: [complete]
+Likely cause and why plausible: Find appointment query does not search for cancelled appointment - the reason why the search won't bring them up is because it's not looking for it
+Evidence intended to inspect / competing explanation / discriminating check: Other methods of finding the appointment work such as, booking, cancleing, then checiking if the item itself has been updated to cancled - this can be done proving the item still exists
 Member and saved sequence/time or commit showing this preceded consultation: [complete]
 
 ### F8-02 human entry
-Likely cause and why plausible: [complete]
-Evidence intended to inspect / competing explanation / discriminating check: [complete]
-Member and saved sequence/time or commit showing this preceded consultation: [complete]
+Likely cause and why plausible: Program deletes cancelled appointments.
+Evidence intended to inspect / competing explanation / discriminating check: Inpsect the cancle function to see if it removes the entry from the datastore
+Member and saved sequence/time or commit showing this preceded consultation: Not continued after first hypothosis was correct
 
 ## F. GitHub Copilot prompts, findings and human decisions
 
