@@ -2,7 +2,7 @@
 
 
 from datetime import datetime
-
+from smartcare.queries import select_appointments
 from smartcare.data_store import SmartCareDataStore
 from smartcare.domain import (
     Appointment,
@@ -153,6 +153,19 @@ class AppointmentService:
         practitioner_id: str,
         status: AppointmentStatus | None = None,
     ) -> list[Appointment]:
+
+        practitioner = self.data_store.find_practitioner(practitioner_id)
+
+        if practitioner is None:
+            raise LookupError("practioner not found")
+
+        appointments = self.data_store.list_appointments()
+
+        return select_appointments(
+            appointments,
+            practitioner.practitioner_id,
+            status,
+        )
         """Stage 9: new ordered list; default includes every status.
 
         Unknown practitioner raises LookupError, invalid status

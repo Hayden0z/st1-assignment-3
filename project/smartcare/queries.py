@@ -7,10 +7,7 @@ from smartcare.domain import Appointment, AppointmentStatus
 
 
 def appointment_sort_key(appointment: Appointment) -> tuple[datetime, str]:
-    """Return the date/time and appointment ID ordering key without side
-    effects.
-    """
-    raise NotImplementedError('Stage 9: named sorting key')
+    return(appointment.date_time, appointment.appointment_id)    
 
 
 def select_appointments(
@@ -18,10 +15,15 @@ def select_appointments(
     practitioner_id: str,
     status: AppointmentStatus | None = None,
 ) -> list[Appointment]:
-    """Return a new list for this practitioner, optionally filtered by
-    status.
 
-    Order by date/time then appointment ID using appointment_sort_key.
-    Do not mutate the source list/objects or perform input/output.
-    """
-    raise NotImplementedError('Stage 9: pure query')
+    results = []
+
+    for appointoment in appointments:
+        if appointoment.practitioner.practitioner_id == practitioner_id:
+
+            if status is None or appointoment.status == status:
+                results.append(appointoment)
+
+    return sorted(results, key=appointment_sort_key)
+    
+  
