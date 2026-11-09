@@ -2,18 +2,18 @@
 
 BLANK student response template. Supplied from the beginning in stage12/ in your EXISTING repository; complete it only when you reach Stage 12 after the previous applicable stage is integrated, verified and recorded; preserve project/, tests, earlier records and Git history. UG/common and PG/extended scope must be explicit. Use concise results and versioned links, not copied logs or source. No staff answers or fabricated approvals.
 
-Group/tutorial: [response]
-Members and UG/PG applicability: [response]
+Group/tutorial: [Friday Group 3]
+Members and UG/PG applicability: [Tobyn Dwyer * tobynjames, Hanyia Iftikhar * ArduinoO121, Hayden Ozimek * Hayden0z, UG]
 
 
 ## A Release scope and starting SHA
 
-Release label/version and requirements baseline: [response]
-Common starting SHA / branch / applicable members: [response]
-PG starting SHA / branch / applicable members or not applicable: [response]
-Working-state review and approved integration: [response]
-Protected common candidate and PG differences: [response]
-Feature freeze / owner / verifier: [response]
+Release label/version and requirements baseline: [Final SmartCare Project, Stage 9 is finished]
+Common starting SHA / branch / applicable members: [bfaddd53f0805a0815ffe7cb6781c16377b32741, Main, Tobyn Dwyer * tobynjames, Hanyia Iftikhar * ArduinoO121, Hayden Ozimek * Hayden0z]
+PG starting SHA / branch / applicable members or not applicable: []
+Working-state review and approved integration: [Approved by Hayden]
+Protected common candidate and PG differences: []
+Feature freeze / owner / verifier: [Hayden has finsihed Stage 9, no additional functionalities]
 
 
 ## B Requirements and release readiness matrix
@@ -24,14 +24,17 @@ Tutorial activity 2 and actual readiness matrix. Add exact requirement/acceptanc
 
 | Release claim / requirement / scope | Evidence | Location/link and SHA | Reviewer | Sufficient? | Gap/action |
 |---|---|---|---|---|---|
-| Cancellation history works | [response] | [response] | [response] | [response] | [response] |
-| Architecture responsibilities are appropriate | [response] | [response] | [response] | [response] | [response] |
-| Rescheduling is safe — PG only | [response] | [response] | [response] | [response] | [response] |
-| AI use is responsible — common recheck / PG assurance | [response] | [response] | [response] | [response] | [response] |
-| System is maintainable | [response] | [response] | [response] | [response] | [response] |
-| FR-01–03 register/find and validation | [response] | [response] | [response] | [response] | [response] |
-| FR-04–05 booking/conflict rules | [response] | [response] | [response] | [response] | [response] |
-| FR-06–08 cancellation/history/find | [response] | [response] | [response] | [response] | [response] |
+| Cancellation history works | [Two tests prove this test_cancel_retains_history & test_failed_cancel_retains_history] | [st1-assignment-3\project\tests\test_services.py , 00597fa61e588c1165b80974b5c01a971ee52c23] | [Tobyn] | [Yes] | [None] |
+
+| Architecture responsibilities are appropriate | [Even distrobution of work accross all 3 team members] | [Spans accross all files & commits] | [All team memberrs] | [Yes] | [None] |
+
+| Rescheduling is safe — PG only | [] | [] | [] | [] | [] |
+
+| AI use is responsible — common recheck / PG assurance | [Prompts done but no implementations made] | [Spans across all files & commits] | [All team members] | [Yes] | [None] |
+| System is maintainable | [System passes code checks required from each stage] | [Spans across all files & commits] | [All team members] | [Yes] | [None] |
+| FR-01–03 register/find and validation | [three tests prove this test_required_fields] | [st1-assignment-3\project\tests\test_starter.py, 882a9beeafd0df9238a823e7e91d73325e66018f] | [Tobyn] | [Yes] | [None] |
+| FR-04–05 booking/conflict rules | [Two tests prove this test_registration_and_booking & test_conflict_rule_and_different_practitioner] | [st1-assignment-3\project\tests\test_starter.py, 882a9beeafd0df9238a823e7e91d73325e66018f] | [All team members] | [Yes] | [None] |
+| FR-06–08 cancellation/history/find | [Three tests prove this test_failed_cancel_retains_history, test_cancel_retains_history, test_find_items_by_ID] | [st1-assignment-3\project\tests\test_services.py, 00597fa61e588c1165b80974b5c01a971ee52c23] | [Tobyn] | [Yes] | [None] |
 | FR-09 and QRY/FP listing/filter/order/purity | [response] | [response] | [response] | [response] | [response] |
 | UI full console sequence and error recovery | [response] | [response] | [response] | [response] | [response] |
 | Session-only scope / FR-10 retired | [response] | [response] | [response] | [response] | [response] |
@@ -42,12 +45,17 @@ Tutorial activity 2 and actual readiness matrix. Add exact requirement/acceptanc
 
 | Suite/scope | Environment/version | Working directory and command | Tested SHA | Actual result | Evidence link |
 |---|---|---|---|---|---|
-| Complete common | [response] | [response] | [response] | [response] | [response] |
+| Complete common | [Version 12] | [\SmartCare_Starter\st1-assignment-3> - python main.py --interactive  ] | [bfaddd53f0805a0815ffe7cb6781c16377b32741] | [Works] | [menu appears and works when command is run] |
+
 | Complete PG if applicable | [response] | [response] | [response] | [response] | [response] |
-| Affected focused checks after correction | [response] | [response] | [response] | [response] | [response] |
-| Full integrated recheck | [response] | [response] | [response] | [response] | [response] |
-Prior assertions preserved / reviewed test diff: [response]
-Remaining failure / limitation: [response]
+
+| Affected focused checks after correction | [NA] | [NA] | [NA] | [NA] | [NA] |
+
+| Full integrated recheck | [Within Github] | [Github reposotroy] |
+
+Prior assertions preserved / reviewed test diff: [No changes required, we all all happy with the current product]
+
+Remaining failure / limitation: [You can book a appointment that overlaps with a patients current appointment - this could be fixed]
 
 
 ## D Console and end to end demonstration
@@ -55,40 +63,94 @@ Remaining failure / limitation: [response]
 | Demo step | Synthetic setup/input | Expected requirement | Observed result | Evidence/link |
 |---|---|---|---|---|
 | Problem and stakeholders | [response] | [response] | [response] | [response] |
-| Register and find Patient and two Practitioners | [response] | [response] | [response] | [response] |
-| Valid booking | [response] | [response] | [response] | [response] |
-| Same practitioner exact-time conflict rejected | [response] | [response] | [response] | [response] |
-| Different practitioner same time allowed | [response] | [response] | [response] | [response] |
-| Cancel SCHEDULED and retain/find CANCELLED object | [response] | [response] | [response] | [response] |
-| Invalid/repeated cancellation rejected | [response] | [response] | [response] | [response] |
-| Default all-status listing | [response] | [response] | [response] | [response] |
-| Explicit filtering / empty vs unknown / deterministic order | [response] | [response] | [response] | [response] |
-| Invalid date/status/menu/lookup recovery and continued operation | [response] | [response] | [response] | [response] |
-| Session-only limitation and normal exit | [response] | [response] | [response] | [response] |
-| One meaningful requirement-linked pytest test explained | [response] | [response] | [response] | [response] |
-| Architecture and one actual AI decision / known limitation | [response] | [response] | [response] | [response] |
-| PG reschedule identity/participants/time and no-op | [response] | [response] | [response] | [response] |
-| PG conflict/invalid status/failure non-mutation | [response] | [response] | [response] | [response] |
-| PG old slot / current lookup/list ordering / assurance risks | [response] | [response] | [response] | [response] |
-Stable demo owner / fresh process / command: [response]
-PG demonstrations through service/tests or not applicable: [response]
+| Register and find Patient and two Practitioners | [Run --interactive, register 3 persons and find them] | [they get found] | [Items were found] | [console outputs P ID:2
+practitioner found] |
+
+| Valid booking | [make a bookings in the menu] | [booking is made] | [Booked sucsessfully] | [Appointment ID:10
+Patient ID:1
+Practitioner ID:2
+Date/time (YYYY-MM-DD HH:MM):2004-04-04 12:00
+Appointment booked successfully.] |
+
+| Same practitioner exact-time conflict rejected | [book two of the same appointment in a row] | [new appointmnet is rejected] | [appoinmnet was rejected] | [Appointment ID:12
+Patient ID:1
+Practitioner ID:2
+Date/time (YYYY-MM-DD HH:MM):2004-04-04 12:00
+Issue dected Practitioner already has a SCHEDULED appointment at this time] |
+
+| Different practitioner same time allowed | [diffrent practioner allows for bookings at the same time as other bookings] | [new booking works] | [booked sucsessfuly] | [Enter appioment details 
+Appointment ID:12
+Patient ID:1
+Practitioner ID:3
+Date/time (YYYY-MM-DD HH:MM):2004-04-04 12:00
+Appointment booked successfully.] |
+
+| Cancel SCHEDULED and retain/find CANCELLED object | cancel appointment - then find appointment | appoint is still findable after canceling | works | enter 
+Enter appioment ID 
+Appointment ID:10
+Appointment successfully Canclled .
+
+appioment ID 
+Appointment ID:10
+appioment found |
+
+| Invalid/repeated cancellation rejected | cancel appoinment, then try to cancel it again | system won't let you canclel an appoinment twice | issue detected comment raised | Enter appioment ID 
+Appointment ID:10
+Issue dected Only SCHEDULED appointments may be cancelled |
+
+| Default all-status listing | display all appoinments by defualt when searching for a practioners appointments | default = all | default does = all but appoinments come up as id's not as a readable entry | Enter Practitioner ID
+Practitioner ID: 3
+Status filter (scheduled/cancelled/completed, blank = all): 
+<smartcare.domain.Appointment object at 0x000001D840C6B910>|
+
+| Explicit filtering / empty vs unknown / deterministic order | seach for appoinments and select a filter | only items matching the filter apear | cancled appoint apears when searching for cancled appointment | Enter Practitioner ID
+Practitioner ID: 2
+Status filter (scheduled/cancelled/completed, blank = all): cancelled
+<smartcare.domain.Appointment object at 0x000001D840C3F750> |
+
+| Invalid date/status/menu/lookup recovery and continued operation| type invalid format for one of the required feilds | menu stays active but lets user know they've made a mistake | exception message visiable | Appointment ID:1
+Patient ID:1
+Practitioner ID:2
+Date/time (YYYY-MM-DD HH:MM):2026 10 1 9   
+Issue dected Use date/time format YYYY-MM-DD HH:MM |
+
+
+| Session-only limitation and normal exit | data is only stored per session | serching for an appointment after closing the session means it will no longer exist | could not cancel appointment after restarting console as it no longer exists| Enter appioment ID 
+Appointment ID:10
+Issue dected Appointment not found|
+
+| One meaningful requirement-linked pytest test explained | test_find_items_by_ID | you can find exisitng items using their id | tests pass | running 
+python -m pytest tests/test_services.py::test_find_items_by_ID
+collected 1 item                                                                                                                                               
+
+tests\test_services.py .                                                                                                                                 [100%]
+
+====================================================================== 1 passed in 0.01s
+ 
+| Architecture and one actual AI decision / known limitation | AI not used in project|
+
+Stable demo owner / fresh process / command: [from reposotroy folde run
+python main.py --interactive 
+]
+
 
 
 ## E Final code quality and AI review
 
 | Review area | Code/evidence location | Finding or no finding | Correction/no change and recheck |
 |---|---|---|---|
-| OOP responsibilities and pure-query boundaries | [response] | [response] | [response] |
-| PascalCase and snake_case naming | [response] | [response] | [response] |
-| Useful type hints and meaningful docstrings | [response] | [response] | [response] |
-| Four-space indentation and imports/layout | [response] | [response] | [response] |
-| Focused methods / duplication / dead or commented code | [response] | [response] | [response] |
-| Globals / leakage / unnecessary inheritance or frameworks | [response] | [response] | [response] |
-| No SQLite/persistence/repository ABCs/speculative features | [response] | [response] | [response] |
-| Synthetic data / secrets / dependencies / provenance | [response] | [response] | [response] |
-| Significant common Copilot contributions and human verification | [response] | [response] | [response] |
-| PG plan/diff/test approvals and Stage 11 VERIFY/TRUST | [response] | [response] | [response] |
+| OOP responsibilities and pure-query boundaries | [smart care folder] | [OOP in use with moduels and classes] | [no change] |
+| PascalCase and snake_case naming | [tests and functions use snake case - datastore foundation items using Pascal] | [see previos] | [no change] |
+| Useful type hints and meaningful docstrings | [domain.py] | [values are of required type - string or datetime, and there is inputvalidation for date's] | [no change] |
+| Four-space indentation and imports/layout | [whole project] | [basic indentaion used with python] | [no change] |
+| Focused methods / duplication / dead or commented code | [NA] | [no commented out code remiains that's not in use] | [no change] |
+| Globals / leakage / unnecessary inheritance or frameworks | [whole project] | [no found inherritance issues] | [no change] |
+| No SQLite/persistence/repository ABCs/speculative features | [built in datastore with no sql database] | [response] | [no change] |
+| Synthetic data / secrets / dependencies / provenance | [Datetime depenancy] | [dependancy is not deprecated] | [no change] |
+| Significant common Copilot contributions and human verification | [copilot not used outside of md. docuemnts] | [response] | [response] |
 
+
+copilot not used outside of md. docuemnts
 | AI claim | Affected requirement/code | Human check | Accept/Modify/Reject and reason | Actual outcome/action or no change |
 |---|---|---|---|---|
 | [response] | [response] | [response] | [response] | [response] |
@@ -100,15 +162,17 @@ Available AI evidence and missing evidence honestly disclosed: [response]
 
 | README item | Location | Verifier | Result/gap |
 |---|---|---|---|
-| Purpose and included common/PG scope | [response] | [response] | [response] |
-| Out-of-scope capabilities and known limitations | [response] | [response] | [response] |
-| Confirmed teaching Python version and dependency installation | [response] | [response] | [response] |
-| Working directory / demo / interactive / test commands | [response] | [response] | [response] |
-| Repository structure and architecture responsibilities | [response] | [response] | [response] |
-| Responsible AI summary / synthetic-data rule | [response] | [response] | [response] |
-| Release label/version and SHA links | [response] | [response] | [response] |
-Root README index and project/README verified: [response]
-Fresh clone or extracted ZIP / candidate identity: [response]
+| Purpose and included common/PG scope | [whole project] | [Tobyn] | [scope finalized and all functionality implemented] |
+| Out-of-scope capabilities and known limitations | [Tobyn] | [booking confilts with patients not throwing an error is a known limitation] | [not in scope] |
+| Confirmed teaching Python version and dependency installation | [teaching version  - 3.11.1 datetime depenancy ] | [tobyn] | [checked] |
+| Working directory / demo / interactive / test commands | [to run interactive python main.py --interactive 
+tests can be run with python -m pytest 
+] | [tobyn] | [checked] |
+| Repository structure and architecture responsibilities | [owner is Hayden, we push without PR] | [tobyn] | [checked] |
+| Responsible AI summary / synthetic-data rule |Ai not used outside of md docuemnts
+| Release label/version and SHA links | [github] | [tobyn] | [checked] |
+Root README index and project/README verified: [verified]
+Fresh clone or extracted ZIP / candidate identity: [no cloned zip, can be done in git]
 Verifier and clean environment / actual version: [response]
 Setup/run/test commands and observed results: [response]
 Missing local file or setup gap / remedy and recheck: [response]

@@ -5,12 +5,12 @@ Baseline: Stage 6 foundation, 2026 revision 2. This starter deliberately leaves 
 
 ## Group index
 
-- Group and tutorial: [complete]
-- Member names, GitHub usernames and UG/PG cohorts: [complete]
-- Shared repository URL: [complete]
-- Latest completed stage: [complete]
-- Verified code SHA: [complete]
-- Test command, working directory and observed result: [complete]
+- Group and tutorial: [Friday Group 3]
+- Member names, GitHub usernames and UG/PG cohorts: [Tobyn Dwyer * tobynjames, Hanyia Iftikhar * ArduinoO121, Hayden Ozimek * Hayden0z, UG]
+- Shared repository URL: [https://github.com/Hayden0z/st1-assignment-3]
+- Latest completed stage: [Stage 9]
+- Verified code SHA: [bfaddd53f0805a0815ffe7cb6781c16377b32741]
+- Test command, working directory and observed result: [SmartCare_Starter/st1-assignment-3/project/tests]
 - Final submitted SHA, if different from tested code SHA: [complete; explain evidence-only changes]
 
 Do not put student IDs, private peer ratings, credentials or personal contact details here.
