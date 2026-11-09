@@ -35,8 +35,8 @@ Tutorial activity 2 and actual readiness matrix. Add exact requirement/acceptanc
 | FR-01–03 register/find and validation | [three tests prove this test_required_fields] | [st1-assignment-3\project\tests\test_starter.py, 882a9beeafd0df9238a823e7e91d73325e66018f] | [Tobyn] | [Yes] | [None] |
 | FR-04–05 booking/conflict rules | [Two tests prove this test_registration_and_booking & test_conflict_rule_and_different_practitioner] | [st1-assignment-3\project\tests\test_starter.py, 882a9beeafd0df9238a823e7e91d73325e66018f] | [All team members] | [Yes] | [None] |
 | FR-06–08 cancellation/history/find | [Three tests prove this test_failed_cancel_retains_history, test_cancel_retains_history, test_find_items_by_ID] | [st1-assignment-3\project\tests\test_services.py, 00597fa61e588c1165b80974b5c01a971ee52c23] | [Tobyn] | [Yes] | [None] |
-| FR-09 and QRY/FP listing/filter/order/purity | [response] | [response] | [response] | [response] | [response] |
-| UI full console sequence and error recovery | [response] | [response] | [response] | [response] | [response] |
+| FR-09 and QRY/FP listing/filter/order/purity | [tests practioner filtering sorting date and time then appioment ID and unchanged ID ] | [queries.py and services.py and stage 9 SHA ] | [Toybn and Hanyia] | [Yes] | [None] |
+| UI full console sequence and error recovery | [Completed UI-01 and UI-02 menu demstatioons inculding booking,cancceltion retained history and more] | [run menu()] | [all team members] | [yes] | [no] |
 | Session-only scope / FR-10 retired | [response] | [response] | [response] | [response] | [response] |
 | PG RES and assurance integration | [response] | [response] | [response] | [response] | [response] |
 
