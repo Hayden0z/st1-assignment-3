@@ -174,26 +174,27 @@ tests can be run with python -m pytest
 Root README index and project/README verified: [verified]
 Fresh clone or extracted ZIP / candidate identity: [no cloned zip, can be done in git]
 Verifier and clean environment / actual version: [response]
-Setup/run/test commands and observed results: [response]
-Missing local file or setup gap / remedy and recheck: [response]
+Setup/run/test commands and observed results: [Tests can not be ran after cloneing zip due to missing pytest depenancy the menu does work]
+Missing local file or setup gap / remedy and recheck: [run in project folder
+python -m pip install -r requirements-dev.txt - then tests work (when ran from project folder)]
 
 
 ## G Known limitations debt and release notes
 
-Delivered features: [response]
-Important fixes: [response]
-Architecture/quality improvements: [response]
-Known limitations: [response]
-AI-assisted development note: [response]
+Delivered features: [all functional requires deliverd]
+Important fixes: [stage 8 debugging fixes for f8-01 & f8-02]
+Architecture/quality improvements: [None]
+Known limitations: [patinet can have overlapping booking]
+AI-assisted development note: [NONE]
 
 | Debt item | Impact | Priority | Future action | Accepted? / release rationale |
 |---|---|---|---|---|
-| [response] | [response] | [response] | [response] | [response] |
-Session-only synthetic data and minute-precision local time: [response]
+| [Patient conflict] | [meduim] | [not in scope] | [ignore ] | [not accepted] |
+Session-only synthetic data and minute-precision local time: [This would need to be fixed as the data should be stored somewhere not relying on a session to remain open]
 Production auth/roles, portal, notifications, billing/insurance, clinical AI exclusions: [response]
-Scale/concurrency, timezone policy, operations/monitoring, accessibility/usability limitations: [response]
+Scale/concurrency, timezone policy, operations/monitoring, accessibility/usability limitations: [must be aest]
 Difference between accepted scope limit and unresolved required behaviour: [response]
-PG assurance residual risks / owner / status or not applicable: [response]
+
 
 
 ## H Release findings and corrective action
@@ -238,71 +239,74 @@ Source ZIP name / SHA correspondence / extracted comparison: [response]
 
 ## L Submission package verification
 
-- [ ] Feature freeze and scoped requirements traced.
-- [ ] Applicable full regressions, integrated demo and invalid paths verified.
-- [ ] Architecture/code quality and final AI/dependency checks complete.
-- [ ] Root README and project/README reproduced by another verifier.
-- [ ] Release notes, technical debt and limitations visible.
-- [ ] Independent human review, integration and release decision recorded.
-- [ ] Repository URL accessible to marker and exact candidate SHA identified.
+- [ x] Feature freeze and scoped requirements traced.
+- [x ] Applicable full regressions, integrated demo and invalid paths verified.
+- [x ] Architecture/code quality and final AI/dependency checks complete.
+- [ x] Root README and project/README reproduced by another verifier.
+- [ x] Release notes, technical debt and limitations visible.
+- [x ] Independent human review, integration and release decision recorded.
+- [x ] Repository URL accessible to marker and exact candidate SHA identified.
 - [ ] One source ZIP from submitted commit with root README.md and .gitignore.
 - [ ] project/ source and all accumulated applicable tests included.
-- [ ] All common applicable stage records included; Stage 10/11 records completed only for the PG pathway. UG-only groups retain supplied PG-only templates unchanged as intentionally not applicable, without fabricated N/A responses.
-- [ ] No .git, environments, caches, secrets, real data, staff solutions or private QA in ZIP.
-- [ ] No Stage 8 utility/backups/recovery metadata or duplicate application in ZIP.
-- [ ] Mixed-group common protection and candidate upload routing checked.
-- [ ] Group reflection, confidential individual peer forms and common team viva routed separately.
+- [ x] All common applicable stage records included; Stage 10/11 records completed only for the PG pathway. UG-only groups retain supplied PG-only templates unchanged as intentionally not applicable, without fabricated N/A responses.
+- [x ] No .git, environments, caches, secrets, real data, staff solutions or private QA in ZIP.
+- [x ] No Stage 8 utility/backups/recovery metadata or duplicate application in ZIP.
+- [x ] Mixed-group common protection and candidate upload routing checked.
+- [x ] Group reflection, confidential individual peer forms and common team viva routed separately.
 
-Confirmed assessment item/upload route: [response]
-Deadline/timezone: [response]
-Repository access arrangement: [response]
-Mixed-candidate upload arrangement: [response]
-Oral/video recording/accessibility arrangements: [response]
+Confirmed assessment item/upload route: [[response](https://github.com/Hayden0z/st1-assignment-3)]
+Deadline/timezone: [9/11/2026 12:59PM AEST]
+Repository access arrangement: [All team members have access]
+Mixed-candidate upload arrangement: [Hanyias laptop will upload link]
+Oral/video recording/accessibility arrangements: [do to seprately]
 Remaining administration or release dependency: [response]
 
 
 ## M Formative questions
 
-1. What is a release candidate? [response]
+1. What is a release candidate? [a release candidate is a software that is near completion   version of a software has passed being bugged tested and can be considered for a public release.  ]
 
-2. What is feature freeze and why is it used? [response]
+2. What is feature freeze and why is it used? [feature freezes is a period of time in a project development when all work of adding new features and capabilities stopped.This is used so teams can focus and work on bug fixes and critical updates on the project ]
 
-3. What is regression testing in a release context? [response]
+3. What is regression testing in a release context? [the practice of re doing previously executed code in a program this is all before a release of a program.this is all done so that recent code changes for example new features or bug fixes are correct and doesn't break current functionality ,]
 
-4. What is a known limitation? [response]
+4. What is a known limitation? [if there is two appointments that have the same data for example date time or same patient.If the two practitioners have different practitioners it will will work and not cause an issue.It's only when it’s the same practitioner it will raise a flag as the system focus on the practitioner]
 
-5. What is technical debt? [response]
+5. What is technical debt? [technical debt is a concept when development teams take shortcuts or small solutions to meet deadlines   ]
 
-6. What are release notes? [response]
+6. What are release notes? [are user summaries published alongside a new software, hardware or update to explain what was changed,affects and why it matters  ]
 
-7. What is software maintenance? [response]
 
-8. What is the purpose of the individual demonstration/viva? [response]
+7. What is software maintenance?  [software maintenance is the process of updating,modifying and checking a software after it has been deployed to the public  ]
 
-9. What should the final responsible-AI check establish before release? [response]
+8. What is the purpose of the individual demonstration/viva?  [ the main purpose of individual demonstration/viva is to show and check that a student have a true understanding of their work ]
 
-10. What is the main course conclusion about AI and the role of the software engineer? [response]
+9. What should the final responsible-AI check establish before release?  [the Final responsible-AI should check that a system meets full requirements,safety accountability and performance]
 
+10. What is the main course conclusion about AI and the role of the software engineer? [the main conclusion about AI is that it acts like an assistant to the software developer giving tips and ideas to fix an issue but a developer does not have to take its advice    ]
 
 ## N Reflection viva and handover
 
-Strongest evidence SmartCare is ready: [response]
-Weakest area: [response]
-How AI use changed from Stage 1 to Stage 12: [response]
+Strongest evidence SmartCare is ready: [Yes]
+Weakest area: [UI dosn't display full appointment details]
+How AI use changed from Stage 1 to Stage 12: [Ai not used outside of MD docuemnts]
 Start doing — engineering and AI use: [response]
 Stop doing — engineering and AI use: [response]
 Continue doing — engineering and AI use: [response]
-What worked / caused rework / future delivery improvement: [response]
-One paragraph — If AI can write code why do we still need software engineers: [response]
+What worked / caused rework / future delivery improvement: [Bookings recoring meetings  twice weekly to do work together as a group]
+One paragraph — If AI can write code why do we still need software engineers: [
+
+    Software engeingering is not just about writing code, you also need to understand or come up with the system as a whole adhering to the scope that you or the steakholdes have outlined for you. To simply just write code you could add out of scope features or not add features as intennted. therefore there is alot more to the job of software engniners as to where if AI could perfectly write all the code we need we'd still have people in charge of making sure the output is as intendeted
+]
 
 | Preparation item | Own explanation and evidence link |
 |---|---|
-| Problem and stakeholders | [response] |
-| Two requirements and acceptance criteria | [response] |
-| Domain model and architecture | [response] |
-| Design trade-off | [response] |
-| Meaningful test and its limits / 100 percent coverage | [response] |
-| Diagnosed defect and verification | [response] |
+| Problem and stakeholders | [Smartcare clink requires a new system so they don't have to rely on multible spreadsheets and physical documents] |
+| Two requirements and acceptance criteria | [Can be ran on one central computer, is small and easy to use] |
+| Domain model and architecture | [python code with a built in data store] |
+| Design trade-off | [can only be ran in a terminal running python] |
+| Meaningful test and its limits / 100 percent coverage | [17 tests all valid] |
+| Diagnosed defect and verification | [no defects in the tests]
 | Shared store and session-state/query responsibilities | [response] |
 | What would break if session-state lookup/query responsibilities changed? | [response] |
 | Why cancellation is domain behaviour / conflict coordination is service behaviour | [response] |
