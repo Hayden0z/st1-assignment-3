@@ -18,7 +18,7 @@ Feature freeze / owner / verifier: [Hayden has finsihed Stage 9, no additional f
 
 ## B Requirements and release readiness matrix
 
-Tutorial activity 1: All tests pass, README setup is incomplete, one dependency is unreviewed and a known limitation is undocumented. Decide Release / Release with conditions / Do not release and justify: [response]
+Tutorial activity 1: All tests pass, README setup is incomplete, one dependency is unreviewed and a known limitation is undocumented. Decide Release / Release with conditions / Do not release and justify: [README setup completed, tests passed, Release]
 
 Tutorial activity 2 and actual readiness matrix. Add exact requirement/acceptance IDs, evidence and reviewer; distinguish common/PG applicability.
 
@@ -35,10 +35,10 @@ Tutorial activity 2 and actual readiness matrix. Add exact requirement/acceptanc
 | FR-01–03 register/find and validation | [three tests prove this test_required_fields] | [st1-assignment-3\project\tests\test_starter.py, 882a9beeafd0df9238a823e7e91d73325e66018f] | [Tobyn] | [Yes] | [None] |
 | FR-04–05 booking/conflict rules | [Two tests prove this test_registration_and_booking & test_conflict_rule_and_different_practitioner] | [st1-assignment-3\project\tests\test_starter.py, 882a9beeafd0df9238a823e7e91d73325e66018f] | [All team members] | [Yes] | [None] |
 | FR-06–08 cancellation/history/find | [Three tests prove this test_failed_cancel_retains_history, test_cancel_retains_history, test_find_items_by_ID] | [st1-assignment-3\project\tests\test_services.py, 00597fa61e588c1165b80974b5c01a971ee52c23] | [Tobyn] | [Yes] | [None] |
-| FR-09 and QRY/FP listing/filter/order/purity | [tests practioner filtering sorting date and time then appioment ID and unchanged ID ] | [queries.py and services.py and stage 9 SHA ] | [Toybn and Hanyia] | [Yes] | [None] |
-| UI full console sequence and error recovery | [Completed UI-01 and UI-02 menu demstatioons inculding booking,cancceltion retained history and more] | [run menu()] | [all team members] | [yes] | [no] |
-| Session-only scope / FR-10 retired | [response] | [response] | [response] | [response] | [response] |
-| PG RES and assurance integration | [response] | [response] | [response] | [response] | [response] |
+| FR-09 and QRY/FP listing/filter/order/purity | [] | [] | [] | [] | [] |
+| UI full console sequence and error recovery | [] | [] | [] | [] | [] |
+| Session-only scope / FR-10 retired | [] | [] | [] | [] | [] |
+| PG RES and assurance integration | [] | [] | [] | [] | [] |
 
 
 ## C Full regression results
@@ -47,7 +47,7 @@ Tutorial activity 2 and actual readiness matrix. Add exact requirement/acceptanc
 |---|---|---|---|---|---|
 | Complete common | [Version 12] | [\SmartCare_Starter\st1-assignment-3> - python main.py --interactive  ] | [bfaddd53f0805a0815ffe7cb6781c16377b32741] | [Works] | [menu appears and works when command is run] |
 
-| Complete PG if applicable | [response] | [response] | [response] | [response] | [response] |
+| Complete PG if applicable | [] | [] | [] | [] | [] |
 
 | Affected focused checks after correction | [NA] | [NA] | [NA] | [NA] | [NA] |
 
@@ -62,7 +62,7 @@ Remaining failure / limitation: [You can book a appointment that overlaps with a
 
 | Demo step | Synthetic setup/input | Expected requirement | Observed result | Evidence/link |
 |---|---|---|---|---|
-| Problem and stakeholders | [response] | [response] | [response] | [response] |
+| Problem and stakeholders | [] | [] | [] | [] |
 | Register and find Patient and two Practitioners | [Run --interactive, register 3 persons and find them] | [they get found] | [Items were found] | [console outputs P ID:2
 practitioner found] |
 
@@ -145,17 +145,17 @@ python main.py --interactive
 | Four-space indentation and imports/layout | [whole project] | [basic indentaion used with python] | [no change] |
 | Focused methods / duplication / dead or commented code | [NA] | [no commented out code remiains that's not in use] | [no change] |
 | Globals / leakage / unnecessary inheritance or frameworks | [whole project] | [no found inherritance issues] | [no change] |
-| No SQLite/persistence/repository ABCs/speculative features | [built in datastore with no sql database] | [response] | [no change] |
+| No SQLite/persistence/repository ABCs/speculative features | [built in datastore with no sql database] | [] | [no change] |
 | Synthetic data / secrets / dependencies / provenance | [Datetime depenancy] | [dependancy is not deprecated] | [no change] |
-| Significant common Copilot contributions and human verification | [copilot not used outside of md. docuemnts] | [response] | [response] |
+| Significant common Copilot contributions and human verification | [copilot not used outside of md. docuemnts] | [] | [] |
 
 
 copilot not used outside of md. docuemnts
 | AI claim | Affected requirement/code | Human check | Accept/Modify/Reject and reason | Actual outcome/action or no change |
 |---|---|---|---|---|
-| [response] | [response] | [response] | [response] | [response] |
-Access route or approved equivalent / limitations: [response]
-Available AI evidence and missing evidence honestly disclosed: [response]
+| [Explaining documentation terminology] | [Does not affect code/requirements] | [Done by group members] | [Accepted for documentation] | [No change to code, changes to documentation] |
+Access route or approved equivalent / limitations: [Accessed through copilot/md files, no limitations]
+Available AI evidence and missing evidence honestly disclosed: [Copilot log]
 
 
 ## F README and reproducibility check
@@ -173,7 +173,7 @@ tests can be run with python -m pytest
 | Release label/version and SHA links | [github] | [tobyn] | [checked] |
 Root README index and project/README verified: [verified]
 Fresh clone or extracted ZIP / candidate identity: [no cloned zip, can be done in git]
-Verifier and clean environment / actual version: [response]
+Verifier and clean environment / actual version: [Verified by Hanyia, On clean software/laptop]
 Setup/run/test commands and observed results: [Tests can not be ran after cloneing zip due to missing pytest depenancy the menu does work]
 Missing local file or setup gap / remedy and recheck: [run in project folder
 python -m pip install -r requirements-dev.txt - then tests work (when ran from project folder)]
@@ -191,9 +191,9 @@ AI-assisted development note: [NONE]
 |---|---|---|---|---|
 | [Patient conflict] | [meduim] | [not in scope] | [ignore ] | [not accepted] |
 Session-only synthetic data and minute-precision local time: [This would need to be fixed as the data should be stored somewhere not relying on a session to remain open]
-Production auth/roles, portal, notifications, billing/insurance, clinical AI exclusions: [response]
+Production auth/roles, portal, notifications, billing/insurance, clinical AI exclusions: [None of these additional features are added]
 Scale/concurrency, timezone policy, operations/monitoring, accessibility/usability limitations: [must be aest]
-Difference between accepted scope limit and unresolved required behaviour: [response]
+Difference between accepted scope limit and unresolved required behaviour: [No unresolved required behaviour]
 
 
 
@@ -201,40 +201,40 @@ Difference between accepted scope limit and unresolved required behaviour: [resp
 
 | Requirement/claim | Reproduction/observation | Impact/severity | Owner/action | Corrective diff | Focused/full recheck | Residual limit |
 |---|---|---|---|---|---|---|
-| [response] | [response] | [response] | [response] | [response] | [response] | [response] |
-Justified no-change conclusion if no defect found: [response]
-Release blockers still open / status: [response]
+| [Stage 8 Appointment History Debugging] | [Return all bookings regardless of cancellation] | [Affects patient understanding and clinical transparency] | [Tobyn/Hanyia] | [Commented out line 94 for data_store.py] | [Yes, all tests pass and no errors present] | [None] |
+Justified no-change conclusion if no defect found: [Appointment history Behaviour matches specifications, no changes required]
+Release blockers still open / status: [No additional features required, Status: Operational]
 
 
 ## I Git review and integration evidence
 
-Issue / PR / diff links and reviewed SHA: [response]
-Independent reviewer / feedback / response: [response]
-Integration commit / full recheck: [response]
-Tracked and untracked file inspection / cleanliness: [response]
-Secrets/staff material/caches/tool-metadata exclusion check: [response]
-Candidate recovery plan / known-good SHA: [response]
-Named substantive contributions: [response]
+Issue / PR / diff links and reviewed SHA: [No files/issues were reviewed after commit]
+Independent reviewer / feedback / response: [Project code reviewer was Pranav Gupta, Reviewed Stage 6, 7 & 8, Recieved feedback on testing/debugging methods]
+Integration commit / full recheck: [No new commits were made]
+Tracked and untracked file inspection / cleanliness: [Only intended files are included in the release]
+Secrets/staff material/caches/tool-metadata exclusion check: [No credentials or sensitive data detected]
+Candidate recovery plan / known-good SHA: [Latest version, b114da143ed21438febd8059d129ba04e4b508e0]
+Named substantive contributions: [No major contributions were made]
 
 
 ## J Human release decision
 
-Decision — READY FOR COURSE RELEASE / READY WITH DOCUMENTED LIMITATIONS / NOT YET READY: [response]
-Approver / date / rationale and evidence: [response]
-What risks remain / conditions / owners: [response]
-Can the team explain the system: [response]
-Can a change be recovered: [response]
-Common decision / PG decision where different: [response]
+Decision — READY FOR COURSE RELEASE / READY WITH DOCUMENTED LIMITATIONS / NOT YET READY: [READY FOR COURSE RELEASE]
+Approver / date / rationale and evidence: [Hanyia/All team members, 9/11/2026, All Functional requirements have been met, SmartCare_Starter/st1-assignment-3/project/tests]
+What risks remain / conditions / owners: [No risks remain, Group 3]
+Can the team explain the system: [Architecture can be concisely explained]
+Can a change be recovered: [Recoverable changes must be saved in a backup system and lastest SHA]
+Common decision / PG decision where different: [READY FOR COURSE RELEASE]
 
 
 ## K Final tested release SHA
 
-Exact common tested SHA: [response]
-Exact PG tested SHA or not applicable: [response]
-Final submitted SHA / repository URL: [response]
-Evidence-only later commit and difference explanation: [response]
-Executable changes after testing and re-verification: [response]
-Source ZIP name / SHA correspondence / extracted comparison: [response]
+Exact common tested SHA: [bfaddd53f0805a0815ffe7cb6781c16377b32741]
+Exact PG tested SHA or not applicable: [None]
+Final submitted SHA / repository URL: [b114da143ed21438febd8059d129ba04e4b508e0]
+Evidence-only later commit and difference explanation: [Added release documentation only, no executable code changed]
+Executable changes after testing and re-verification: [No executable code changed]
+Source ZIP name / SHA correspondence / extracted comparison: [File on Github as repository and not ZIP]
 
 
 ## L Submission package verification
@@ -254,12 +254,12 @@ Source ZIP name / SHA correspondence / extracted comparison: [response]
 - [x ] Mixed-group common protection and candidate upload routing checked.
 - [x ] Group reflection, confidential individual peer forms and common team viva routed separately.
 
-Confirmed assessment item/upload route: [[response](https://github.com/Hayden0z/st1-assignment-3)]
+Confirmed assessment item/upload route: [(https://github.com/Hayden0z/st1-assignment-3)]
 Deadline/timezone: [9/11/2026 12:59PM AEST]
 Repository access arrangement: [All team members have access]
 Mixed-candidate upload arrangement: [Hanyias laptop will upload link]
 Oral/video recording/accessibility arrangements: [do to seprately]
-Remaining administration or release dependency: [response]
+Remaining administration or release dependency: [No]
 
 
 ## M Formative questions
@@ -290,9 +290,9 @@ Remaining administration or release dependency: [response]
 Strongest evidence SmartCare is ready: [Yes]
 Weakest area: [UI dosn't display full appointment details]
 How AI use changed from Stage 1 to Stage 12: [Ai not used outside of MD docuemnts]
-Start doing — engineering and AI use: [response]
-Stop doing — engineering and AI use: [response]
-Continue doing — engineering and AI use: [response]
+Start doing — engineering and AI use: []
+Stop doing — engineering and AI use: []
+Continue doing — engineering and AI use: []
 What worked / caused rework / future delivery improvement: [Bookings recoring meetings  twice weekly to do work together as a group]
 One paragraph — If AI can write code why do we still need software engineers: [
 
@@ -301,25 +301,25 @@ One paragraph — If AI can write code why do we still need software engineers: 
 
 | Preparation item | Own explanation and evidence link |
 |---|---|
-| Problem and stakeholders | [Smartcare clink requires a new system so they don't have to rely on multible spreadsheets and physical documents] |
+| Problem and stakeholders | [Smartcare link requires a new system so they don't have to rely on multible spreadsheets and physical documents] |
 | Two requirements and acceptance criteria | [Can be ran on one central computer, is small and easy to use] |
 | Domain model and architecture | [python code with a built in data store] |
 | Design trade-off | [can only be ran in a terminal running python] |
 | Meaningful test and its limits / 100 percent coverage | [17 tests all valid] |
 | Diagnosed defect and verification | [no defects in the tests]
-| Shared store and session-state/query responsibilities | [response] |
-| What would break if session-state lookup/query responsibilities changed? | [response] |
-| Why cancellation is domain behaviour / conflict coordination is service behaviour | [response] |
-| FR-07 retained history test | [response] |
-| Actual AI change rejected/modified or honestly accepted with verification | [response] |
-| Unresolved limitation / future production work | [response] |
-| Personal implementation contribution | [response] |
-| Personal test/review/design/integration contribution | [response] |
-| PG agentic change and rescheduling verification | [response] |
-| PG responsible-AI risk/remediation or supported no finding | [response] |
+| Shared store and session-state/query responsibilities | [Major data stored on data_store.py and retrieved on testing files/service/domain.py] |
+| What would break if session-state lookup/query responsibilities changed? | [Appointment history may not be recorded correctly] |
+| Why cancellation is domain behaviour / conflict coordination is service behaviour | [cancellation focuses on a single entity/object, conflict coordination focuses on multiple domain objects] |
+| FR-07 retained history test | [Cancelled appointments remain visible in history] |
+| Actual AI change rejected/modified or honestly accepted with verification | [AI changes were not implemented] |
+| Unresolved limitation / future production work | [No work gaps] |
+| Personal implementation contribution | [Hanyia coded finding & retaining practitioner/appointment values, test_services.py] |
+| Personal test/review/design/integration contribution | [Hanyia helped revise documentation, Recorded documentation in Stage 12] |
+| PG agentic change and rescheduling verification | [Not PG] |
+| PG responsible-AI risk/remediation or supported no finding | [Not PG] |
 
 Optional bounded-change practice only: validation rule, focused test, safe error-message change, explicit-input query or agreed status rule with test. Explain expected impact before editing, make a small change, run the test, and identify evidence to inspect if unsure. No live AI unless explicitly permitted. Preserve the submitted candidate.
 
-Practice question/change and reasoning: [response or not undertaken]
-Separate reflection / peer / common team viva evidence links and routing: [response]
+Practice question/change and reasoning: [Not undertaken]
+Separate reflection / peer / common team viva evidence links and routing: [Personal reflection/Hanyia in Stage 12 & Canvas]
 No further coding stage. Later corrections use the published assessment process.
